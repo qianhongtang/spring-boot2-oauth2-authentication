@@ -1,0 +1,79 @@
+server:
+  port: 8081
+  session-timeout: 30
+  tomcat.max-threads: 100
+  tomcat.uri-encoding: UTF-8
+spring:
+  devtools:
+    livereload:
+      enabled: false
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  security:
+    user:
+      name: user
+      password: 123456
+      roles: USER,ADMIN
+  datasource:
+    url: jdbc:mysql://10.168.1.140:4307/oauth_server
+    username: billing
+    password: billing
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      max-idle: 10
+      max-total: 50
+      initial-size: 5
+      max-wait-millis: 10000
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+  cache:
+    type: REDIS
+    cache-names: redisCache
+    redis:
+      time-to-live: 28800000
+      use-key-prefix: true
+      cache-null-values: true
+      key-prefix: USER@
+  redis:
+    host: 10.168.1.140
+    port: 6381
+    password: Passw0rd
+    jedis:
+      pool:
+        max-idle: 10
+        min-idle: 5
+        max-active: 10
+        max-wait: 2000
+management:
+  server:
+    port: 8000
+  endpoints:
+    web:
+      base-path: /manage
+      path-mappings: request_mappings
+      exposure:
+        include: info,health,beans,configgrops
+    enabled-by-default: false
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      enabled: true
+    beans:
+      enabled: true
+    info:
+      enabled: true
+    configgrops:
+      enabled: true
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        security: INFO
+      org:
+        mybatis: INFO
