@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
   session-timeout: 30
   tomcat.max-threads: 100
   tomcat.uri-encoding: UTF-8
@@ -50,7 +50,7 @@ spring:
         max-wait: 2000
 management:
   server:
-    port: 10001
+    port: 10000
   endpoints:
     web:
       base-path: /manage
