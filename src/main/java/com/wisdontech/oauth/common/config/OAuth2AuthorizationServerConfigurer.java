@@ -50,7 +50,7 @@ public class OAuth2AuthorizationServerConfigurer extends AuthorizationServerConf
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		endpoints.tokenStore(new RedisTokenStore(connectionFactory));
+		endpoints.tokenStore(redisTokenStore);
 		endpoints.setClientDetailsService(clientDetailsService);
 		endpoints.authenticationManager(authenticationManager);
 		endpoints.tokenServices(defaultTokenServices());
