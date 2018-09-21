@@ -5,9 +5,9 @@
 该项目要求jdk版本为1.8。
 
 如有问题欢迎联系！
->作者：唐乾红--
->邮箱：qianhongtang@gmail.com--
->QQ: 77979586--
+* 作者：唐乾红</br>
+* 邮箱：qianhongtang@gmail.com</br>
+* QQ: 77979586</br>
 
 该项目实现的内容为：
 1.	鉴权服务器
