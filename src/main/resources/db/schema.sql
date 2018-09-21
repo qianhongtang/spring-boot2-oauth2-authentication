@@ -117,13 +117,12 @@ CREATE TABLE IF NOT EXISTS `oauth_role` (
 -- 导出  表 oauth_server.oauth_user 结构
 CREATE TABLE IF NOT EXISTS `oauth_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `school_id` bigint(20) DEFAULT NULL,
   `wx_openid` varchar(200) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL COMMENT '登陆名',
   `usercode` varchar(100) DEFAULT NULL COMMENT '用户编码',
   `password` varchar(100) DEFAULT NULL COMMENT '密码',
-  `remark_name` varchar(200) DEFAULT NULL COMMENT '备注姓名',
   `name` varchar(200) DEFAULT NULL COMMENT '用户名称',
+  `remark_name` varchar(200) DEFAULT NULL COMMENT '备注姓名',
   `nickname` text,
   `mobile` varchar(50) DEFAULT NULL COMMENT '手机号',
   `email` varchar(100) DEFAULT NULL COMMENT '邮箱',
@@ -131,7 +130,6 @@ CREATE TABLE IF NOT EXISTS `oauth_user` (
   `id_number` varchar(50) DEFAULT NULL COMMENT '身份证号',
   `birth_date` datetime DEFAULT NULL COMMENT '出生日期',
   `province` bigint(20) DEFAULT NULL COMMENT '省份',
-  `role_id` bigint(20) DEFAULT NULL COMMENT '用户角色id',
   `city` bigint(20) DEFAULT NULL COMMENT '城市',
   `url` varchar(255) DEFAULT NULL COMMENT '头像地址',
   `area` bigint(20) DEFAULT NULL COMMENT '区域',
@@ -151,8 +149,7 @@ CREATE TABLE IF NOT EXISTS `oauth_user` (
   KEY `nickname` (`nickname`(191)),
   KEY `mobile` (`mobile`),
   KEY `email` (`email`),
-  KEY `wx_openid` (`wx_openid`(191)),
-  KEY `school_id` (`school_id`)
+  KEY `wx_openid` (`wx_openid`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=1460 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 -- 数据导出被取消选择。
